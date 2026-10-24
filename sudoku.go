@@ -92,35 +92,6 @@ func main() {
 			return
 		}
 	}
-	for c := 0; c < 9; c++ {
-		column := make([]rune, 9)
-
-		for r := 0; r < 9; r++ {
-			column[r] = []rune(boardRows[r])[c]
-		}
-
-		if isDuplicate(column) {
-			fmt.Println("Error")
-			return
-		}
-	}
-
-	for boxRow := 0; boxRow < 9; boxRow += 3 {
-		for boxCol := 0; boxCol < 9; boxCol += 3 {
-			box := make([]rune, 0, 9)
-
-			for r := boxRow; r < boxRow+3; r++ {
-				for c := boxCol; c < boxCol+3; c++ {
-					box = append(box, []rune(boardRows[r])[c])
-				}
-			}
-
-			if isDuplicate(box) {
-				fmt.Println("Error")
-				return
-			}
-		}
-	}
 
 	board := make([][]rune, 9)
 	for idx, row := range boardRows {
